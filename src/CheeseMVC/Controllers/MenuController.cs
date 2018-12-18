@@ -107,14 +107,15 @@ namespace CheeseMVC.Controllers
                     CheeseMenu menuItem = new CheeseMenu
                     {
                         Cheese = context.Cheeses.Single(c => c.ID == cheeseID),
+                        Menu = context.Menus.Single(c => c.ID == menuID)
                     };
 
                     context.CheeseMenus.Add(menuItem);
                     context.SaveChanges();
                 }
 
-                return Redirect(string.Format("/Menu/ViewMenu/{0}", addMenuItemViewModel.Menu.ID)); 
-
+                return Redirect(string.Format("/Menu/ViewMenu/{0}", addMenuItemViewModel.MenuID)); 
+                // return RedirectToAction("/Menu/ViewMenu", new { id = menuID });
             }
 
             return View(addMenuItemViewModel);

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CheeseMVC.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class updateMenuAndCategory : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
